@@ -14,6 +14,10 @@ app.use(express.json());
 const itemsRouter = require('./routes/items');
 app.use('/api/items', itemsRouter);
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Item Manager API');
+});
+
 // Database Connection
 const uri = process.env.MONGODB_URI;  // Get the MongoDB URI from the environment variables
 
